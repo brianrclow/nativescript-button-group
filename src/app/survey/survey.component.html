@@ -2,9 +2,9 @@
 
 <ScrollView>
   <StackLayout>
-    <ng-container *ngFor="let item of questions">
+    <ng-container *ngFor="let question of survey">
       <GridLayout rows="*" columns="*, *, *">
-        <Label row="0" col="0" [text]="item.title" textWrap="true"></Label>
+        <Label row="0" col="0" [text]="question.title" textWrap="true"></Label>
         <Button
           row="0"
           col="1"

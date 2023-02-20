@@ -8,12 +8,12 @@ import { QuestionService } from './question.service';
   styleUrls: ['./survey.component.scss'],
 })
 export class SurveyComponent implements OnInit {
-  questions: Array<Question>;
+  survey: Array<Question>;
 
   constructor(private questionService: QuestionService) {}
 
   ngOnInit(): void {
-    this.questions = this.questionService.getQuestions();
+    this.survey = this.questionService.getQuestions();
   }
 
   selectAnswer(args, answer: string) {
