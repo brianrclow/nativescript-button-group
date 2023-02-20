@@ -27,33 +27,39 @@ export class QuestionComponent implements ControlValueAccessor {
 
   selected: string;
   touched = false;
-  disabled = false;
+  disabled: boolean;
   onTouched: any = () => {};
   onChanged: any = () => {};
 
   selectAnswer(args) {
-    var btn = args.object;
+    console.log('TOUCHED: selectAnswer');
 
+    var btn = args.object;
     this.onTouched(); // <-- mark as touched
     this.selected = btn.text;
     this.onChanged(btn.text); // <-- call function to let know of a change
     if (btn.text === 'Yes') {
       btn.backgroundColor = 'green';
-    } else {
+    } else if (btn.text === 'No') {
       btn.backgroundColor = 'red';
     }
+    console.log('DISABLED?', this.disabled);
   }
 
   writeValue(answer: string): void {
-    this.selected = answer ?? 'No';
+    console.log('TOUCHED: writeValue');
+    this.selected = answer;
   }
   registerOnChange(fn: any): void {
+    console.log('TOUCHED: registerOnChange');
     this.onChanged = fn; // <-- save the function
   }
   registerOnTouched(fn: any): void {
+    console.log('TOUCHED: registerOnTouched');
     this.onTouched = fn; // <-- save the function
   }
-  setDisabledState?(isDisabled: boolean): void {
+  setDisabledState(isDisabled: boolean): void {
+    console.log('TOUCHED: setDisabledState');
     this.disabled = isDisabled;
   }
 }
