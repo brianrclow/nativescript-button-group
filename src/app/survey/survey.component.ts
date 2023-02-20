@@ -15,13 +15,4 @@ export class SurveyComponent implements OnInit {
   ngOnInit(): void {
     this.survey = this.questionService.getQuestions();
   }
-
-  selectAnswer(args, answer: string) {
-    var btn = args.object;
-    if (answer === 'yes') {
-      btn.backgroundColor = 'green';
-    } else {
-      btn.backgroundColor = 'red';
-    }
-  }
 }

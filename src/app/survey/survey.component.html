@@ -3,22 +3,9 @@
 <ScrollView>
   <StackLayout>
     <ng-container *ngFor="let question of survey">
-      <GridLayout rows="*" columns="*, *, *">
+      <GridLayout rows="*" columns="*, *">
         <Label row="0" col="0" [text]="question.title" textWrap="true"></Label>
-        <Button
-          row="0"
-          col="1"
-          text="Yes"
-          class="btn btn-black-outline"
-          (tap)="selectAnswer($event, 'yes')"
-        ></Button>
-        <Button
-          row="0"
-          col="2"
-          text="No"
-          class="btn btn-black-outline"
-          (tap)="selectAnswer($event, 'no')"
-        ></Button>
+        <ns-question row="0" col="1"></ns-question>
       </GridLayout>
     </ng-container>
   </StackLayout>
