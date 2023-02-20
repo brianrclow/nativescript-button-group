@@ -1,0 +1,21 @@
+.btn {
+  font-weight: bold;
+  text-transform: capitalize;
+  height: 40vh;
+  border-radius: 12px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.btn-black-outline {
+  color: black;
+  background-color: white;
+  border-color: black;
+  border-width: 5px;
+}
+
+.btn-black-outline:highlighted {
+  background-color: black;
+  color: white;
+  border-color: white;
+}

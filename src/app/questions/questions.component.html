@@ -1,0 +1,25 @@
+<ActionBar title="Questions"></ActionBar>
+
+<GridLayout>
+  <ListView [items]="questions">
+    <ng-template let-item="item">
+      <GridLayout rows="*" columns="*, *, *">
+        <Label row="0" col="0" [text]="item.title" textWrap="true"></Label>
+        <Button
+          row="0"
+          col="1"
+          text="Yes"
+          class="btn btn-black-outline"
+          (tap)="selectAnswer($event, 'yes')"
+        ></Button>
+        <Button
+          row="0"
+          col="2"
+          text="No"
+          class="btn btn-black-outline"
+          (tap)="selectAnswer($event, 'no')"
+        ></Button>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>
