@@ -1,8 +1,8 @@
 <ActionBar title="Survey"></ActionBar>
 
-<GridLayout>
-  <ListView [items]="questions">
-    <ng-template let-item="item">
+<ScrollView>
+  <StackLayout>
+    <ng-container *ngFor="let item of questions">
       <GridLayout rows="*" columns="*, *, *">
         <Label row="0" col="0" [text]="item.title" textWrap="true"></Label>
         <Button
@@ -20,6 +20,6 @@
           (tap)="selectAnswer($event, 'no')"
         ></Button>
       </GridLayout>
-    </ng-template>
-  </ListView>
-</GridLayout>
+    </ng-container>
+  </StackLayout>
+</ScrollView>
