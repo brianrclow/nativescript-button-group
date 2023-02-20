@@ -3,11 +3,11 @@ import { Question } from './question';
 import { QuestionService } from './question.service';
 
 @Component({
-  selector: 'ns-questions',
-  templateUrl: './questions.component.html',
-  styleUrls: ['./questions.component.scss'],
+  selector: 'ns-survey',
+  templateUrl: './survey.component.html',
+  styleUrls: ['./survey.component.scss'],
 })
-export class QuestionsComponent implements OnInit {
+export class SurveyComponent implements OnInit {
   questions: Array<Question>;
 
   constructor(private questionService: QuestionService) {}

@@ -3,12 +3,12 @@ import { NativeScriptModule } from '@nativescript/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { QuestionsComponent } from './questions/questions.component';
+import { SurveyComponent } from './survey/survey.component';
 
 @NgModule({
   bootstrap: [AppComponent],
   imports: [NativeScriptModule, AppRoutingModule],
-  declarations: [AppComponent, QuestionsComponent],
+  declarations: [AppComponent, SurveyComponent],
 
   providers: [],
   schemas: [NO_ERRORS_SCHEMA],
