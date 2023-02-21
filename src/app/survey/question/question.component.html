@@ -3,12 +3,14 @@
     <ng-container
       *ngIf="!disabled && selected === option.answer; else notSelected"
     >
-      <Button
-        [text]="option.answer"
-        class="btn btn-black-outline"
-        (tap)="selectAnswer($event)"
-      >
-      </Button>
+      <ng-container *ngIf="selected === 'Yes'; else answerNo">
+        <Button [text]="option.answer" class="btn btn-black-outline yesAnswer">
+        </Button>
+      </ng-container>
+      <ng-template #answerNo>
+        <Button [text]="option.answer" class="btn btn-black-outline noAnswer">
+        </Button>
+      </ng-template>
     </ng-container>
     <ng-template #notSelected>
       <Button
